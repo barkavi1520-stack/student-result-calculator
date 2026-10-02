@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🎓</div>
+                <div>
+                    <h1>Student Result</h1>
+                    <p>Calculator</p>
+                </div>
+            </div>
+
+            <div class="header-badge">
+                📊 Academic Dashboard
+            </div>
+        </header>
+
+
+        <!-- Student Information -->
+        <section class="card student-card">
+
+            <div class="section-title">
+                <div class="section-icon">👤</div>
+                <div>
+                    <h2>Student Information</h2>
+                    <p>Enter your basic details</p>
+                </div>
+            </div>
+
+            <div class="input-grid">
+
+                <div class="input-group">
+                    <label for="studentName">Student Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="studentId">Student ID</label>
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Example: IT2026XXX"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Subject Marks -->
+        <section class="card">
+
+            <div class="section-header-row">
+
+                <div class="section-title">
+                    <div class="section-icon">📚</div>
+                    <div>
+                        <h2>Subject Results</h2>
+                        <p>Enter marks for your subjects</p>
+                    </div>
+                </div>
+
+                <button class="add-btn" id="addSubjectBtn" type="button">
+                    ＋ Add Subject
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                            <th>Grade Point</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="subjectTable">
+
+                        <tr class="subject-row">
+
+                            <td class="number">1</td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="subject-name"
+                                    placeholder="Subject name"
+                                >
+                            </td>
+
+                            <td>
+                                <input
+                                    type="number"
+                                    class="marks"
+                                    placeholder="0"
+                                    min="0"
+                                    max="100"
+                                >
+                            </td>
+
+                            <td>
+                                <span class="grade">-</span>
+                            </td>
+
+                            <td>
+                                <span class="grade-point">-</span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="delete-btn"
+                                    type="button"
+                                    title="Delete subject"
+                                >
+                                    🗑️
+                                </button>
+                            </td>
+
+                        </tr>
+
+                        <tr class="subject-row">
+
+                            <td class="number">2</td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="subject-name"
+                                    placeholder="Subject name"
+                                >
+                            </td>
+
+                            <td>
+                                <input
+                                    type="number"
+                                    class="marks"
+                                    placeholder="0"
+                                    min="0"
+                                    max="100"
+                                >
+                            </td>
+
+                            <td>
+                                <span class="grade">-</span>
+                            </td>
+
+                            <td>
+                                <span class="grade-point">-</span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="delete-btn"
+                                    type="button"
+                                    title="Delete subject"
+                                >
+                                    🗑️
+                                </button>
+                            </td>
+
+                        </tr>
+
+                        <tr class="subject-row">
+
+                            <td class="number">3</td>
+
+                            <td>
+                                <input
+                                    type="text"
+                                    class="subject-name"
+                                    placeholder="Subject name"
+                                >
+                            </td>
+
+                            <td>
+                                <input
+                                    type="number"
+                                    class="marks"
+                                    placeholder="0"
+                                    min="0"
+                                    max="100"
+                                >
+                            </td>
+
+                            <td>
+                                <span class="grade">-</span>
+                            </td>
+
+                            <td>
+                                <span class="grade-point">-</span>
+                            </td>
+
+                            <td>
+                                <button
+                                    class="delete-btn"
+                                    type="button"
+                                    title="Delete subject"
+                                >
+                                    🗑️
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="grading-info">
+                💡 Grading: A+ = 90–100 | A = 80–89 | B = 70–79 |
+                C = 60–69 | D = 50–59 | F = Below 50
+            </p>
+
+        </section>
+
+
+        <!-- Calculate Button -->
+        <div class="calculate-area">
+
+            <button id="calculateBtn" class="calculate-btn" type="button">
+                <span>✨</span>
+                Calculate Results
+            </button>
+
+        </div>
+
+
+        <!-- Results -->
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="result-heading">
+                <div>
+                    <span class="small-title">FINAL RESULT</span>
+                    <h2 id="resultStudentName">Student Result</h2>
+                    <p id="resultStudentId">Student ID</p>
+                </div>
+
+                <div id="statusBadge" class="status-badge">
+                    PASS
+                </div>
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <span>Total Marks</span>
+                    <strong id="totalMarks">0</strong>
+                    <small>out of 100 × subjects</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <span>Average</span>
+                    <strong id="averageMarks">0%</strong>
+                    <small>overall average</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <span>GPA</span>
+                    <strong id="gpa">0.00</strong>
+                    <small>grade point average</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <span>Subjects</span>
+                    <strong id="subjectCount">0</strong>
+                    <small>subjects calculated</small>
+                </div>
+
+            </div>
+
+
+            <!-- Performance -->
+            <div class="performance-card">
+
+                <div class="performance-header">
+                    <div>
+                        <h3>Overall Performance</h3>
+                        <p id="performanceMessage">
+                            Your performance will appear here.
+                        </p>
+                    </div>
+
+                    <div class="performance-percentage" id="performancePercentage">
+                        0%
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Result Breakdown -->
+            <div class="breakdown-card">
+
+                <h3>📋 Result Breakdown</h3>
+
+                <div id="resultBreakdown"></div>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="result-actions">
+
+                <button
+                    class="secondary-btn"
+                    id="printBtn"
+                    type="button"
+                >
+                    🖨️ Print Result
+                </button>
+
+                <button
+                    class="reset-btn"
+                    id="resetBtn"
+                    type="button"
+                >
+                    🔄 Start Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>Student Result Calculator</p>
+            <span>Built with HTML • CSS • JavaScript</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
